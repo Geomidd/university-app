@@ -1,0 +1,21 @@
+{
+  "name": "app",
+  "private": "true",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.0.1",
+    "@hotwired/turbo-rails": "^7.1.1",
+    "@materializecss/materialize": "^1.1.0-alpha",
+    "esbuild": "^0.14.13",
+    "material-icons": "^1.10.6",
+    "sass": "^1.49.0"
+  },
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
+    "build:css": "sass ./app/assets/stylesheets/application.sass.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "develop:install": "bundle config set --local without 'production' && bundle install",
+    "build:windows": "node esbuild.windows.js"
+  },
+  "devDependencies": {
+    "glob": "^7.2.0"
+  }
+}
