@@ -5,6 +5,6 @@ import "./controllers";
 import "@materializecss/materialize";
 
 // Setup Materialize JS
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("turbo:load", function () {
   M.AutoInit();
 });

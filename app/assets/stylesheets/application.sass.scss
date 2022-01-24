@@ -1,2 +1,12 @@
 @import "@materializecss/materialize/sass/materialize";
 @import "material-icons/iconfont/material-icons";
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
