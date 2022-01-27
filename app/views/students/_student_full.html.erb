@@ -4,8 +4,10 @@
       <span class="card-title">Name: <%= student.name %></span>
       <p>Email: <%= student.email %></p>
     </div>
-    <div class="card-action">
-      <%= link_to '<i class="material-icons right">create</i>Edit your profile'.html_safe, edit_student_path(student), class: "btn waves-effect waves-light" %>
-    </div>
+    <%if current_user == @student %>
+      <div class="card-action">
+        <%= link_to '<i class="material-icons right">create</i>Edit your profile'.html_safe, edit_student_path(student), class: "btn waves-effect waves-light" %>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -1,33 +1,29 @@
 <!-- Account Dropdown (Regular) -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+  <li><%= session_link %></li>
 </ul>
 <!-- Account Dropdown (Hamburger) -->
 <ul id="dropdown2" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+  <li><%= session_link %></li>
 </ul>
 <!-- Hamburger Menu -->
 <ul class="sidenav" id="mobile-demo">
-  <li><%= link_to "Courses", nil %></li>
-  <li><%= link_to "Entrollments", nil %></li>
-  <%# <li><%= link_to "Account", nil %>
+  <li><%= link_to "Courses", root_path %></li>
+  <% if logged_in? %>
+    <li><%= link_to "Students", students_path %></li>
+  <% end %>
   <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
 </ul>
 <nav>
   <div class="nav-wrapper">
     <div class="container">
-      <a href="#" class="brand-logo right">Tech U</a>
+      <%= link_to "Tech U", root_path, class: "brand-logo right" %>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><%= link_to "Courses", nil %></li>
-        <li><%= link_to "Entrollments", nil %></li>
-        <%# <li><%= link_to "Account", nil %>
+        <li><%= link_to "Courses", root_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to "Students", students_path %></li>
+        <% end %>
         <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Account<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
     </div>
