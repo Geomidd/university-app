@@ -5,8 +5,12 @@
       <p><%= course.description %></p>
     </div>
     <div class="card-action">
-      <a href="#">Enroll</a>
-      <a href="#">Info</a>
+      <div class="row card-action-row">
+        <% if logged_in? && !current_user.courses.include?(course) %>
+          <%= button_to "Enroll", course_enroll_path(course_id: course.id), method: :post, form_class: "col s3", class: "btn-flat waves-effect orange-text text-lighten-1" %>
+        <% end %>
+        <%= button_to "Info", course_path(course), form_class: "col s3", class: "btn-flat waves-effect orange-text text-lighten-1" %>
+      </div>
     </div>
   </div>
 </div>
